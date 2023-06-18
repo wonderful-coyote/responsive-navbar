@@ -49,6 +49,7 @@ const texts = [
 
 
 const dropdownItems = document.querySelectorAll('.dropdown-menu li');
+const linksItems = document.querySelectorAll(['.links li', '.action-btn']);
 dropdownItems.forEach((item, index) => {
   item.addEventListener('click', function (event) {
     event.preventDefault();
@@ -56,6 +57,14 @@ dropdownItems.forEach((item, index) => {
     heroText.textContent = texts[index];
   });
 });
+
+linksItems.forEach((item, index) => {
+    item.addEventListener('click', function (event) {
+      event.preventDefault();
+      heroTitle.textContent = titles[index];
+      heroText.textContent = texts[index];
+    });
+  });
 
 logo.onclick = function () {
   resetHeroContent();
